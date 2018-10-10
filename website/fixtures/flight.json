@@ -1,0 +1,1 @@
+[{"model": "website.flight", "pk": 1, "fields": {"airport_from": "Kahului", "airport_to": "Holualoa", "day_from": "2018-06-18", "time_from": "00:00:00", "day_to": "2018-06-18", "time_to": "07:00:00", "price": 1435, "plane": "AB123", "captain": 1}}]

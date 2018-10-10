@@ -1,0 +1,5 @@
+- model: website.Captain
+  pk: 2
+  fields:
+    first_name: Andrzej
+    last_name: Chmura

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+    {% if link %}
+    <a href="{{ link }}">Back</a>
+    {% else %}
+    <a href="{% url 'search' %}">Back</a>
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    <div class="details">
+        <h1>Details of the flight no. {{ flight.id }}</h1>
+        <h2>Departure from: {{ flight.airport_from }}</h2>
+        <h2>Time: {{ flight.day_from }} {{ flight.time_from }}</h2>
+        <h2>Arrival to: {{ flight.airport_to }}</h2>
+        <h2>Time: {{ flight.day_to }} {{ flight.time_to }}</h2>
+        <h2>Plane: {{ flight.plane_id }}</h2>
+        <h2>Captain: {{ captain_first_name }} {{ captain_last_name }}</h2>
+        <h2>Free seats: {{ free_seats }}/{{ seats }}</h2>
+        <h2>Price: {{ flight.price }}</h2>
+        {% if ticket_form %}
+        <form id="ticket-form" method="POST">
+            {% csrf_token %}
+            {{ ticket_form.as_p }}
+            <p><input type="submit" value="Buy Ticket"></p>
+        </form>
+            {% if bad_ticket %}
+                <span class="alert">Could not buy the ticket.</span>
+            {% endif %}
+        {% endif %}
+        <h2>List of passengers:</h2>
+        <div class="table-responsive">
+        <table class="table table-striped">
+        <tr>
+            <th>First Name</th><th>Last Name</th><th>Seats</th>
+        </tr>
+        {% for t in tickets %}
+            <tr>
+                <td>{{ t.first_name }}</td><td>{{ t.last_name }}</td><td>{{ t.seats }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        </div>
+    </div>
+{% endblock %}

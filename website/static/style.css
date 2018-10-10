@@ -1,0 +1,32 @@
+#sidebar {
+    background: turquoise;
+    width: 200px;
+    height: 100%;
+    float:left;
+}
+
+#sidebar > h1 {
+    font-size: 36px;
+}
+
+.details > h2 {
+    font-size: 20px;
+}
+
+input {
+    width: 200px;
+}
+
+.content {
+    display: inline-block;
+}
+
+.alert {
+    color: red;
+}
+
+@media only screen and (max-width: 768px) {
+    .content {
+        display: block !important;
+    }
+}

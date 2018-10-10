@@ -1,0 +1,5 @@
+- model: website.Captain
+  pk: 1
+  fields:
+    first_name: Jan
+    last_name: Kowalski

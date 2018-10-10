@@ -1,0 +1,17 @@
+{
+  "name": "airways",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jquery": "^3.3.4",
+    "typescript": "^2.9.2"
+  },
+  "scripts": {
+    "build": "tsc --outDir website/static",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jan Łanecki",
+  "license": "MIT"
+}

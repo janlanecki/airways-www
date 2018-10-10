@@ -1,0 +1,4 @@
+- model: website.Plane
+  pk: AB123
+  fields:
+    seats: 777

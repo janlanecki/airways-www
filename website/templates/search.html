@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+    {% if search_form %}
+        <form id="search-form" method="GET">
+            {{ search_form.as_p }}
+            <p><input type="submit" value="Search"></p>
+        </form>
+    {% endif %}
+{% endblock %}
+{% block body %}
+    <div class="table-responsive">
+    <table class="table table-striped">
+    <tr>
+        <th>From</th>
+        <th>Departure</th>
+        <th>To</th>
+        <th>Arrival</th>
+        <th>Price</th>
+        <th>More</th>
+    </tr>
+    {% for f in flights %}
+        <tr>
+            <td>{{ f.airport_from }}</td>
+            <td>{{ f.day_from }} {{ f.time_from }}</td>
+            <td>{{ f.airport_to }}</td>
+            <td>{{ f.day_to }} {{ f.time_to }}</td>
+            <td>{{ f.price }}</td>
+            <td><a href="{% url 'details' %}?id={{ f.id }}&redirect={{ request.get_full_path|urlencode }}">Details</a></td>
+        </tr>
+    {% endfor %}
+    </table>
+    </div>
+{% endblock %}

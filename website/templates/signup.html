@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+    <a href="{% url 'home' %}">Main Page</a>
+{% endblock %}
+
+{% block body %}
+<h1>Rejestracja</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p><input type="submit" value="Sign Up"></p>
+</form>
+{% endblock %}
